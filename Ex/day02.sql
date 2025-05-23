@@ -142,32 +142,29 @@ where first_name like '___a%';
 -- 이름이 4글자인 사원중 끝에서 두번째 글자가 a인 사원의 이름을 출력하세요
 select first_name
 from employees
-where first_name like '__a_'
-;
+where first_name like '__a_';
 
 -- * NULL
 -- 부서가 없는 사람의 이름과 부서번호를 출력하세요
 -- is null, 
 select 	first_name,
-		department_id
+	department_id
 from employees
-where department_id is null
-;
+where department_id is null;
+	
 -- 부서가 있는 사람의 이름과 부서번호를 출력하세요
 -- is not null
 select 	first_name,
-		department_id
+	department_id
 from employees
-where department_id is not null
-;
+where department_id is not null;
 
 select	first_name,
-		salary,
+	salary,
         commission_pct,
         salary*commission_pct,
         salary*commission_pct+200
-from employees
-;
+from employees;
 
 -- 커미션비율이 있는 사원의 이름과 월급 커미션비율을 출력하세요
 select	first_name,
@@ -182,30 +179,27 @@ where commission_pct is not null
 -- 커미션비율이 없는 직원     commission_pct is null
 -- 조건을 동시에 만족  and   
 select 	first_name,
-		manager_id,
+	manager_id,
         commission_pct
 from employees
 where manager_id is null
-and commission_pct is null
-;
+and commission_pct is null;
 
 -- 부서가 없는 직원의 이름과 월급을 출력하세요
 select 	first_name,
-		salary
+	salary
 from employees
-where department_id is null
-;
+where department_id is null;
 
 -- 월급이 6000이상 10000 이하 인 직원중 커미션비율이 없는 직원의
 -- 이름 월급 커미션 비율을 출력하세요
 select 	first_name,
-		salary,
-		commission_pct
+	salary,
+	commission_pct
 from employees
 where salary >= 6000
 and salary <= 10000
-and commission_pct is null
-;
+and commission_pct is null;
 
 -- ---------------------------------
 -- order by 절(정렬)
@@ -213,10 +207,9 @@ and commission_pct is null
 -- 직원의 이름과 월급을 월급이 많은 직원부터 출력하세요 (큰-->작 : 내림차순)
 -- 오름차순: asc (a->c)     내림차순: desc (d->c)
 select	first_name,
-		salary
+	salary
 from employees
-order by salary desc
-;
+order by salary desc;
 
 -- 월급이 9000이상인 직원의 이름과 월급을 월급이 작은 직원부터 출력하세요
 select 	first_name,
@@ -231,7 +224,6 @@ select	department_id,
 		first_name
 from employees
 order by department_id asc;
-;
 
 -- 부서번호를 오름차순으로 정렬하고 부서번호가 같으면 월급이 높은 사람부터 
 -- 부서번호 월급 이름을 출력하세요  
@@ -239,24 +231,21 @@ select 	department_id,
 		salary,
 		first_name
 from employees
-order by department_id asc, salary desc
-;
+order by department_id asc, salary desc;
 
 -- 월급이 10000 이상인 직원의 이름 월급을 월급이 큰직원부터 출력하세요
 select 	first_name,
 		salary
 from employees
 where salary >= 10000
-order by salary desc
-;
+order by salary desc;
 
 -- 직원의 이름, 급여, 입사일을 이름의 알파벳 올림차순으로 출력하세요   a --> z
 select 	first_name,
 		salary,
         hire_date
 from employees
-order by first_name asc
-;
+order by first_name asc;
 
 -- 직원의 이름, 급여, 입사일을 입사일이 빠른 사람 부터 출력하세요
 -- 2007/04/14(작은 빠른)    2007/04/15(큰 늦은)
@@ -264,5 +253,4 @@ select	first_name,
 		salary,
         hire_date
 from employees
-order by hire_date asc
-;
+order by hire_date asc;
