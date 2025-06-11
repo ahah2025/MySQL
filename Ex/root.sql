@@ -6,7 +6,7 @@
 create user 'web'@'%' identified by '1234';
 		--   계정이름(web)      
         
--- localhost 에서만 접속가능
+-- localhost 에서만 접속가능 (localhost 는 내 컴퓨터)
 -- ********* create user 'web'@'localhost' identified by '2341';        
 
 -- 3번 라인, 7번 라인, 11번 라인 서로 다른 웹 만들기 임
